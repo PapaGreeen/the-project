@@ -1,22 +1,36 @@
-# Godot-specific ignores
+# Godot-specific folders and files
 .import/
+.godot/
 .export/
+.editor/
 export_presets.cfg
 project.godot.lock
 
-# Godot 4+ specific ignores
-.godot/
-/android/
-
-# OS-generated files (good general practice)
+# OS-generated junk files
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# VS Code settings (optional, but recommended if your team uses VS Code)
+# VS Code settings (optional, if you want clean repos)
 .vscode/
 
-# Godot editor cache (optional for cleanliness)
-.editor/
-
-# Logs (optional)
+# Logs or crash dumps (optional, depends on if you generate logs)
 logs/
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.old
+
+# Godot binary exports (optional — when you export to .exe or .apk)
+bin/
+*.exe
+*.apk
+*.zip
+
+# Node modules (if you ever use web exports/tools that generate node_modules)
+node_modules/
