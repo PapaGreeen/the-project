@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://dtgx743qmwbvh"]
+[gd_scene load_steps=3 format=3 uid="uid://dtgx743qmwbvh"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://d10b2jcr7ge4i" path="res://scenes/Player.tscn" id="1_elqb8"]
+[ext_resource type="Texture2D" uid="uid://bfyhg728dsnw7" path="res://assets/backgrounds/dirty-tiles-placeholder.png" id="1_rvslj"]
+
+[node name="World" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("1_rvslj")
+region_enabled = true
+region_rect = Rect2(0, 0, 4096, 4096)
+
+[node name="Player" parent="." instance=ExtResource("1_elqb8")]
+position = Vector2(960, 540)
