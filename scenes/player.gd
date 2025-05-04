@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
-@export var sneak_speed: float = 300.0
+@export var sneak_speed: float = 100.0
+@export var walk_speed: float = 300.0
 @export var sprint_speed: float = 600.0
+@export var starting_health: int = 5
 
 @onready var sprite = $Sprite2D
 
@@ -14,11 +16,16 @@ var sprite_right = preload("res://assets/sprites/player/idle_right.png")
 # default facing
 var last_direction = "down"
 
-func _physics_process(delta):
-	var move_speed = sneak_speed
+
+# Player movement
+func _physics_process(_delta):
+	var move_speed = walk_speed
 
 	if Input.is_action_pressed("sprint"):
 		move_speed = sprint_speed
+
+	if Input.is_action_pressed("crouch"):
+		move_speed = sneak_speed
 
 	var input_vector = Vector2(
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
@@ -42,3 +49,12 @@ func _physics_process(delta):
 
 	if input_vector.length() > 0:
 		print("Player Moving: ", global_position, " | Speed: ", move_speed)
+
+# Player health
+# This will act as the sudo "steahlth" mechanic for now. Ideally, should be handled via states but this will do for now.
+var health = starting_health
+
+#
+#if health == 0
+#	print("Game Over!");
+#
