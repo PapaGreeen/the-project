@@ -13,3 +13,15 @@ region_rect = Rect2(0, 0, 4096, 4096)
 
 [node name="Player" parent="." instance=ExtResource("1_elqb8")]
 position = Vector2(960, 540)
+
+[node name="Drone" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Drone"]
+
+[node name="RayCastNorth" type="RayCast2D" parent="Drone"]
+
+[node name="RayCastEast" type="RayCast2D" parent="Drone"]
+
+[node name="RayCastSouth" type="RayCast2D" parent="Drone"]
+
+[node name="RayCastWest" type="RayCast2D" parent="Drone"]
