@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtgx743qmwbvh"]
+[gd_scene load_steps=4 format=3 uid="uid://dtgx743qmwbvh"]
 
 [ext_resource type="PackedScene" uid="uid://d10b2jcr7ge4i" path="res://scenes/Player.tscn" id="1_elqb8"]
 [ext_resource type="Texture2D" uid="uid://bfyhg728dsnw7" path="res://assets/backgrounds/dirty-tiles-placeholder.png" id="1_rvslj"]
+[ext_resource type="PackedScene" uid="uid://brjbjtbv6lb5y" path="res://scenes/Drone.tscn" id="3_0bbpv"]
 
 [node name="World" type="Node2D"]
 
@@ -14,14 +15,5 @@ region_rect = Rect2(0, 0, 4096, 4096)
 [node name="Player" parent="." instance=ExtResource("1_elqb8")]
 position = Vector2(960, 540)
 
-[node name="Drone" type="Node2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Drone"]
-
-[node name="RayCastNorth" type="RayCast2D" parent="Drone"]
-
-[node name="RayCastEast" type="RayCast2D" parent="Drone"]
-
-[node name="RayCastSouth" type="RayCast2D" parent="Drone"]
-
-[node name="RayCastWest" type="RayCast2D" parent="Drone"]
+[node name="Drone" parent="." instance=ExtResource("3_0bbpv")]
+position = Vector2(960, 540)
