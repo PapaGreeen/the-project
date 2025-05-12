@@ -1,1 +1,3 @@
-# the-project
+# The Project
+
+![alt text](image.png)
