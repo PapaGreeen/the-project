@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl1gmvj6x4xf4"]
+
+[ext_resource type="Script" uid="uid://m157fu4dr441" path="res://scenes/MainMenu.gd" id="1_0ykhv"]
+[ext_resource type="Texture2D" uid="uid://dppyk6wrtkryf" path="res://assets/icons/glitchy-play.png" id="2_2wh52"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ykhv")
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -64.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+icon = ExtResource("2_2wh52")
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
